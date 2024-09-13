@@ -1,7 +1,7 @@
 // let voto  = 18;
 // if (voto < 18 && voto >=0 ) {
 //  console.log("Insufficiente");
-// }else if (voto < 21 && voto >= 18 ) {
+// }else if (voto >= 18 && voto <=21 ) {
 //     console.log("Sufficiente");
 // }else if (voto >21 && voto <= 24 ) {
 //   console.log("Buono");
@@ -17,32 +17,38 @@
 // }  
 
 
+// let voto =31;
+// let giudizio;
 
-let voto = 31;
-switch(voto){
-  case 18 :
-    console.log('Voto Sufficiente');
-    break;
+// switch (true){
+//   case voto <= 18:
+//     console.log("Insufficiente");
+    
+//     break;
 
-    case 24 :
-      console.log('voto Buono');
-      break;
+//     case voto > 18 && voto <= 21:
+//       console.log("Sufficiente");
+//       break;
 
-    case 27 :
-      console.log('Voto Distinto');
-      break;
+//     case voto > 21 && voto <= 24:
+//       console.log("Buono");
+//       break;
 
-      case 29 :
-        console.log('Voto Ottimo');
-        break;
+//       case voto > 24  && voto <= 27:
+//         console.log("Distinto");
+//         break;
 
-        case 30: 
-        console.log('Voto Eccellente!');
-        break;
+//         case voto > 27 && voto <= 29: 
+//         console.log("Ottimo");
+//         break;
+      
+//         case voto == 30: 
+//         console.log("Eccellente!");
+//         break;
 
-        default :
-        console.log('Voto non valido');
-    }
+//         default:
+//           console.log("Voto non valido");
+//     }
 
       
       
