@@ -1,16 +1,33 @@
-let selezione = prompt("Seleziona un numero per la bevanda da 1 a 3 \n 1 Acqua \n 2 Coca-cola \n 3 Birra");
-let numSelezione = 0;
+let scelta;
 
-for(let i = 1; i <=3; i++ );
-if (selezione == 1) {
-    console.log("Hai selezionato Acqua");
+do{
+    scelta = Number(prompt("Seleziona un numero per la bevanda da 1 a 3 \n 1 Acqua \n 2 Coca-cola \n 3 Birra")); 
+
+    switch (scelta) {
+        case 1:
+            console.log("E' stata scelta l'Acqua");
+            
+            break;
+        case 2:
+            console.log("E' stata scelta la coca-cola");
+                 
+            break;
+        case 3:
+            console.log("E' stata scelta la Birra");
+                     
+            break;   
+        default:
+         console.log("La scelta inserita non è valida, riprova ");
+         
+        }
+         
+    }while ( scelta < 1 || scelta > 3) ;
+
     
-} else if (selezione == 2){
-    console.log("Hai selezionato Coca-cola");
-} else if(selezione == 3){
-    console.log("Hai selezionato Birra");
-}  else if(selezione === 1, 2, 3 ){
-    prompt("Seleziona un numero per la bevanda da 1 a 3 \n 1 Acqua \n 2 Coca-cola \n 3 Birra");
-}
+    
+
+
+
+
  
     
