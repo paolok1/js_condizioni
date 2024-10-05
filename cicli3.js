@@ -21,9 +21,9 @@ do{
          
         }
          
-    }while ( scelta != 1 || scelta != 2 || scelta != 3) ;
+    }while ( scelta < 1 || scelta >3 ) ;
 
-    
+     
     
 
 
