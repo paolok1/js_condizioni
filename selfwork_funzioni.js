@@ -1,45 +1,57 @@
-prompt ("Devi effettuare 3 tiri di dado");
-
-function giocatoreUno(player_one) {
-
-    let n = 3;
-
-    let punteggio = 0;
-
-    for (let i = 1; i <=n; i++) {
+function playGames(tiri) {
+   let player1 = 0;
+   let player2 = 0;
+   
+   for (let i = 0; i <= tiri ; i++) {
+    let player1Rules = Math.floor(Math.random() * 6 ) + 1;
     
-    let random = Math.floor(Math.random() * (6 - 1 + 1) + 1);
+    console.log(`Al tiro ${i} il giocatore 1 ha ottenuto il punteggio di ${player1}`);
     
-    punteggio = punteggio + random;
+    let player2Rules = Math.floor(Math.random() * 6 ) + 1;
 
-    console.log(`Al tiro di dado numero ${i} del ${player_one} è uscito ${random} e quindi il punteggio adesso vale ${punteggio} `);
-    
-}
+    console.log(`Al tiro ${i} il giocatore 2 ha ottenuto il punteggio di ${player2}`);
 
-}
-
-giocatoreUno("Giocatore 1");
-
-
-
-prompt("Devi effettuare 3 tiri di dado");
-
-function giocatoreDue(player_two) {
-
-    let n = 3;
-
-    let punteggio = 0;
-
-    for (let i = 1; i <=n; i++) {
-    
-    let random = Math.floor(Math.random() * (6 - 1 + 1) + 1);
-    
-    punteggio = punteggio + random;
-
-    console.log(`Al tiro di dado numero ${i} del ${player_two} è uscito ${random} e quindi il punteggio adesso vale ${punteggio} `);
-    
-}
+    player1 = player1 + player1Rules;
+    player2 = player2 + player2Rules;
+   }
+   
+   if (player1 > player2) {
+    return `Il giocatore 1 ha vinto con un punteggio pari a ${player1} `
+   }else if (player2 > player1){
+    return `Il giocatore 2 ha vinto con un punteggio pari a ${player2}`
+   }else{
+    return `I giocatori hanno pareggiato con un punteggio pari a ${player1}`
+   }   
 
 }
+        
+ let tiri = Number(prompt ("Quanti tiri devono effettuare i giocatori?"));      
+        
+ let result = playGames(tiri);       
+        
+ console.log(result);
+  
+        
+    
+        
+    
 
-giocatoreDue("Giocatore 2");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
