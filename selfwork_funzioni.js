@@ -1,3 +1,6 @@
+// Non riesco a far stampare il risultato finale con il verdetto di vittoria
+
+
 function playGames(tiri) {
    let player1 = 0;
    let player2 = 0;
