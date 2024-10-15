@@ -11,19 +11,20 @@
 // }
 
 
-function controlString(stringa) {
-    stringa = stringa.replace(/\W/g, "");
+// function controlString(stringa) {
+//     stringa = stringa.replace(/\W/g, "");
 
-    let reversed = stringa.split(``).reverse().join(``);
+//     let reversed = stringa.split(``).reverse().join(``);
     
     
-    if (stringa == reversed) {
-        return true;
+//     if (stringa == reversed) {
+//         return true;
         
-    } else {
-       return false; 
-    }
-}
+//     } else {
+//        return false; 
+//     }
+// }
 
-console.log(controlString("i topi non avevano nipoti"));
+// console.log(controlString("i topi non avevano nipoti"));
  
+
