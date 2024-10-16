@@ -8,10 +8,10 @@
     let media = somma / array.length;
     console.log(media);
     
-    
-    let valoriMinori = array.filter((numero)=> numero <=5);
+    let valoriMinori = array.filter((numero)=> numero < media);
     console.log(valoriMinori);
     console.log(`La media è = ${media}, i valori minori sono = ${valoriMinori}`);
+    
     
     
 
