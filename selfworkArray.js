@@ -1,6 +1,9 @@
-let arr1 = [3,7,-2,5,8,1,2,6,-4,12,25];
+// let numbers = [3,7,-2,5,8,1,2,6,-4,12,25];
 
-arr1.sort((a, b) => b - a);
-// arr1.sort((a, b)=> a - b);
+// let sorted = numbers.sort((a , b) => a - b)
 
-console.log(arr1);
+// console.log(sorted);
+
+// let sorted2 = numbers.sort((a , b) => b - a)
+
+// console.log(sorted2);
