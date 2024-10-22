@@ -3,9 +3,10 @@ let presentazione = {
 'cognome' : 'Giuliani',
 'età' : 47,
 'saluta' : function() {
-    // console.log(`Salve a tutti, mi chiamo Paolo Giuliani ed ho 47 anni `);  
+    return `Salve a tutti, mi chiamo ${this.nome} ${this.cognome} ed ho ${this.età} anni. `;  
 }
 };
 
-console.log('Salve a tutti mi chiamo', presentazione.nome , presentazione.cognome, 'ed ho', presentazione.età, 'anni');
+console.log(presentazione.saluta());
 ;
+
