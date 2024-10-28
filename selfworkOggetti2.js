@@ -1,41 +1,41 @@
+let nome= 'Giulietta';
+let telefono = 55555444434;
+
 let rubrica = {
-    'contatti' : [
-        ' Pluto : telefono 3324445432',
-        ' Topolino : telefono 3334444132',
-        ' Pippo : telefono  3344445555',
-        ' Poldo : telefono 3354454545',
-        ' Popeye : telefono 3364444333',
-        ' Paperino : telefono 3314445678',
+    'contatti': [
+        {'nome': 'Pluto', 'telefono': '3331111111'},
+        {'nome': 'Pippo', 'telefono': '3332222222'},
+        {'nome': 'Paperino', 'telefono': '3333333333'},
+        {'nome': 'Robocop', 'telefono': '3334444444'}
+    ],
 
-],
- mostraContatti : function() {
-    rubrica.contatti.forEach((contatto) => console.log(contatto));
-       
-},
+    showAllContacts : function() {
+       this.contatti.forEach( contatto => console.log(`${contatto.nome} : ${contatto.telefono}`));
+        
+    },
 
-aggiungi_contatti : function(nome) {
-    rubrica.contatti.push(nome);
-},
+    showContact : function(contatto) {
+        this.contatti.find(contatto)
+    },
 
-rimuovi_contatto : function(nome_rimosso){
-let index = rubrica.contatti.indexOf(nome_rimosso);
-rubrica.contatti.splice(index, 1);
-},
+    modifyContact : function name(nome, telefono) {
+       let contatto = this.contatti.find(contatto => contatto.nome == nome, telefono.telefono == telefono)
+       let index = this.contatti.indexOf(contatto);
+       if (contatto) {
+        this.contatti.splice(index, 1)
+        console.log('Contatto eliminato');
 
-mostra_contatto_singolo : function(nome) {
-    console.log(this.contatti[2]);
-    
+    }else{
+        this.contatti.push({nome : nome, telefono : telefono})
+        console.log('Contatto aggiunto');
+        
+    }
+        
+
+    },
 }
 
 
 
-};
-rubrica.mostraContatti();
-rubrica.aggiungi_contatti('Goldrake : telefono 333233446821');
-rubrica.rimuovi_contatto(' Topolino : telefono 3334444132');
-console.log(rubrica);
-rubrica.mostra_contatto_singolo([2])  
-rubrica.contatti[3] = 'Gustavo : telefono 22332223323';  
-
-
-
+rubrica.modifyContact(nome, telefono)
+rubrica.showAllContacts()
