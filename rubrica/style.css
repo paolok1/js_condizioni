@@ -8,12 +8,13 @@ body{
 
 
 .btn-custom{
-    padding: 30px 40px;
+    height: 100px;
+    width: 200px;
     color: rgb(0, 255, 65);
     background-color: transparent;
     border: 2px solid rgb(0, 255, 65);
     display: block;
-    margin: 20px auto;
+    margin: auto;
     
 }
 

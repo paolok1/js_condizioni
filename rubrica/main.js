@@ -1,14 +1,17 @@
-//passaggio 1 : creare l'oggetto "rubrica";
-// passaggio 2 : catturare la colonna dove andremo a creare tante cards quanti sono i nostri contatti;
-//  passaggio 3 : creare un metodo che mi mostri tutti i contatti
-//  passaggio 4 : il metodo funziona ma crea la duplicazione degli stessi contatti, devo fare in modo che questo non avvenga.
-// passaggio 5 : abbiamo risolto ma vogliamo che il bottone "Mostra Rubrica" al secondo click nasconda la rubrica 
-
 // wrapper dei contatti
 let contactsWrapper = document.querySelector('#contactsWrapper')
 
 // Bottoni
-let showContactsBtn = document.querySelector('#showContactsBtn') 
+let showContactsBtn = document.querySelector('#showContactsBtn');
+let addContactsBtn = document.querySelector('#addContactsBtn');
+let removeContactsBtn = document.querySelector('#removeContactsBtn')
+
+// inputs
+
+let nameInput = document.querySelector('#nameInput');
+let numberInput = document.querySelector('#numberInput');
+
+
 
 // variabile d'appoggio
 let check = false;
@@ -37,21 +40,79 @@ const rubrica = {
                     
             `;
             contactsWrapper.appendChild(div);
-    
+            
+            
         });  
+        // Icone
+        let icons = document.querySelectorAll('.icon');
+        icons.forEach( (icona , i)=>{
+            icona.addEventListener('click', ()=>{
+                this.lista_contatti.splice(i , 1);
+                this.showContacts();
+            })
+        } )
+    },
+
+    addContact : function(newName , newNumber) {
+        if (newName && newNumber) {
+            this.lista_contatti.push( {contact_name : newName , phone_number : newNumber} );
+            this.showContacts();
+            if(check == false){
+
+                check = true;
+                showContactsBtn.innerHTML = 'Nascondi contatti';
+            }
+        }else{
+            alert('Devi inserire SIA il nome SIA il numero!')
+        }
+    },
+
+    removeContact : function (removedName){
+        let names = this.lista_contatti.map((contatto)=>contatto.contact_name);
+        let index = names.indexOf(removedName);
+        if (index >= 0) {
+            this.lista_contatti.splice(index , 1);
+            rubrica.showContacts();  
+            if(check == false){
+                check = true;
+                showContactsBtn.innerHTML = 'Nascondi contatti';
+        }
+
+        }
+        
+        
+    
+
     }
+            
+};
+
     
     
-    };
+    
     
     showContactsBtn.addEventListener('click', ()=>{
         if(check == false){
             rubrica.showContacts();
             check = true;
+            showContactsBtn.innerHTML = 'Nascondi contatti';
         }else{
             contactsWrapper.innerHTML = '';
             check = false;
+            showContactsBtn.innerHTML = 'Mostra contatti';
         }
             
+    });
+
+
+    addContactsBtn.addEventListener('click' , ()=>{
+        rubrica.addContact( nameInput.value , numberInput.value);
+        nameInput.value = '';
+        numberInput.value = '';
+
+    });
+
+    removeContactsBtn.addEventListener('click' , ()=>{
+        rubrica.removeContact(nameInput.value);
     });
     

@@ -11,7 +11,7 @@
     <header class="container">
         <div class="row">
             <div class="col-12">
-                <h1 class="text-center">Rubrica di Matteo</h1>
+                <h1 class="text-center">Rubrica</h1>
             </div>
         </div>
     </header>
@@ -19,11 +19,36 @@
     <!-- Buttons -->
     <section class="container-fluid my-5">
         <div class="row">
-            <article class="col-12 col-md-4"><h3 class="text-center">Mostra contatti in rubrica</h3>
+            <article class="col-12 col-md-4">
+              <h3 class="text-center mb-3">Mostra contatti in rubrica</h3>
             <button id="showContactsBtn" class="btn btn-custom">Mostra contatti</button>
             </article>
-            <article class="col-12 col-md-4">Input e aggiungi contatto </article>
-            <article class="col-12 col-md-4">Cerca contatto</article>
+
+
+
+            <article class="col-12 col-md-4">
+              <div class="row">
+                <div class="col-12">
+                  <h3 class="text-center mb-3">Aggiungi nuovo contatto</h3>
+                </div>
+
+                <div class="col-6">
+                  <div class="input-group mb-3">
+                    <input type="text" id="nameInput" class="form-control" placeholder="Contatto">
+                  </div>
+                  <div class="input-group mb-3">
+                    <input type="text" id="numberInput" class="form-control" placeholder="Phone Number">
+                  </div>
+                </div>
+
+                <div class="col-6">
+                  <button id="addContactsBtn" class="btn btn-custom">Aggiungi contatto</button>
+                  <button id="removeContactsBtn" class="btn btn-custom mt-2">Rimuovi contatto</button>
+
+
+                </div>
+              </div>
+            </article>
       
         </div>
     </section>
