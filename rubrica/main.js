@@ -5,7 +5,7 @@ let contactsWrapper = document.querySelector('#contactsWrapper')
 let showContactsBtn = document.querySelector('#showContactsBtn');
 let addContactsBtn = document.querySelector('#addContactsBtn');
 let removeContactsBtn = document.querySelector('#removeContactsBtn')
-
+let modifyContactBtn = document.querySelector('#modifyContactBtn')
 // inputs
 
 let nameInput = document.querySelector('#nameInput');
@@ -83,6 +83,14 @@ const rubrica = {
         
     
 
+    },
+
+    modifyContacts : function(nome, numero) {
+        this.lista_contatti.forEach(contatto =>{
+            if (contatto.contact_name == nome) {
+                contatto.phone_number = numero;
+            }
+        })
     }
             
 };
@@ -116,3 +124,11 @@ const rubrica = {
         rubrica.removeContact(nameInput.value);
     });
     
+
+    modifyContactBtn.addEventListener('click' , ()=>{
+        if (nameInput != '') {
+            rubrica.modifyContacts(nameInput.value , numberInput.value)
+            nameInput.value = '';
+            numberInput.value = '';
+        }
+    });
