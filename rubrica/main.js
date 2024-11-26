@@ -89,6 +89,7 @@ const rubrica = {
         this.lista_contatti.forEach(contatto =>{
             if (contatto.contact_name == nome) {
                 contatto.phone_number = numero;
+                rubrica.showContacts();
             }
         })
     }
